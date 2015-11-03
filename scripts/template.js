@@ -1,17 +1,16 @@
-;(function() {
+/* global Logger:false */
 
-  'use strict';
+function R() 
+{
 
   /* global R */
 
-  /* TEST_ENTRY_POINT */
+  return R;
 
-  if (typeof exports === 'object') {
-    module.exports = R;
-  } else if (typeof define === 'function' && define.amd) {
-    define(function() { return R; });
-  } else {
-    this.R = R;
-  }
+}
 
-}.call(this));
+function test()
+{
+  var r = R();
+  Logger.log( Object.keys( r ) );
+}
